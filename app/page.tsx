@@ -5,11 +5,11 @@ import {
     SignedOut,
     UserButton,
 } from '@clerk/nextjs'
-
+import UserIcon from "@/componants/UserIcon";
 const Home = ()=>{
   return (
       <div>
-          <header>
+          <header className={'navbar bg-body-tertiary'}>
               <SignedOut>
                   <SignInButton />
                   <SignUpButton />
@@ -18,6 +18,9 @@ const Home = ()=>{
                   <UserButton />
               </SignedIn>
           </header>
+          <main>
+              <UserIcon></UserIcon>
+          </main>
       </div>
   )
 }
