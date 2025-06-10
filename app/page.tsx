@@ -1,25 +1,15 @@
-import {
-    SignInButton,
-    SignUpButton,
-    SignedIn,
-    SignedOut,
-    UserButton,
-} from '@clerk/nextjs'
-import UserIcon from "@/componants/UserIcon";
+
+import UserIcon from "@/components/UserIcon";
+import PatientContainer from "@/components/PatientContainer";
 const Home = ()=>{
   return (
       <div>
           <header className={'navbar bg-body-tertiary'}>
-              <SignedOut>
-                  <SignInButton />
-                  <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                  <UserButton />
-              </SignedIn>
+
           </header>
           <main>
               <UserIcon></UserIcon>
+              <PatientContainer></PatientContainer>
           </main>
       </div>
   )
