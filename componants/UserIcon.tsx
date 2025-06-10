@@ -4,14 +4,16 @@ const UserIcon = async ()=>{
     const user = await currentUser();
     if (!user) return <div>Not signed in</div>
     console.log(user)
-    return <div>
+    const createdAt = new Date (user.createdAt)
+    const fullMonthName = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(createdAt);
+    return <div className={'d-flex'}>
         <div>
-            <img src={user.imageUrl} alt={'user avatar'}/>
+            <img style={{width:'50px'}} className={'rounded-circle'} src={user.imageUrl} alt={'user avatar'}/>
         </div>
-        <div>
+        <div className={'ps-3'}>
             <div>{user.fullName}</div>
-            <div></div>
-            <div></div>
+            <div>sdfgsdfg</div>
+            <div>{`${fullMonthName} ${createdAt.getDate()}, ${createdAt.getFullYear()}`}</div>
         </div>
     </div>
 }
